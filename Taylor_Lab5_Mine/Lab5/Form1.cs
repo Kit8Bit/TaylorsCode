@@ -20,7 +20,7 @@ namespace Lab5
         }
 
         /*Intro to Programming Lab #5
-         *For Cathy Burchill by Heather Taylor
+         *For Cathy Burchill by Heather Taylor >----------FIXED BY KRISTIAN----------<
          *December 6, 2022
          *This lab generates random numbers in order to have a user log in.
          *Once logged in they may choose between analyzing 2 inputted strings or a randomly generated list of numbers.*/
@@ -188,7 +188,7 @@ namespace Lab5
             else
                 validInput = false;
 
-            return;
+            return validInput;
         }
 
         //chkSwap is checked. It will swap strings 1 and 2 by calling the Swap function
@@ -255,7 +255,7 @@ namespace Lab5
 
             while(counter < nudHowMany.Value)
             {
-                int value = Convert.ToInt32(lstNumbers.Items[counter])
+                int value = Convert.ToInt32(lstNumbers.Items[counter]);
                 sum += value;
                 counter++;
             }
@@ -276,7 +276,7 @@ namespace Lab5
                 int value = Convert.ToInt32(lstNumbers.Items[counter]);
                 int oddCheck = value % 2;    
                 
-                if (oddCheck < 1)
+                if (oddCheck >= 1)
                 { 
                     numOdd++;
                     counter++;
@@ -295,7 +295,7 @@ namespace Lab5
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             Random rand = new Random(733);
-            lstNumbers.Clear();
+            lstNumbers.Items.Clear();
 
             for(int generation = 0; generation < nudHowMany.Value; generation++)
             {
